@@ -57,5 +57,5 @@ output "accessing_map_var" {
 }
 
 output "accessing_map_of_map_var" {
-  value = var.fruit_stock_with_price["apple"].stock
+  value = var.fruit_stock_with_price["apple"].price
 }
