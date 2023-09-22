@@ -40,11 +40,18 @@ variable "fruit_stock_with_price" {
   }
 }
 #--------------------------------------------------------------------------------
-##accessing list the
+##accessing list variable
 output "fruits_first" {
   value = var.fruits[0]
 }
 
 output "fruits_second" {
   value = var.fruits[1]
+}
+
+#-----------------------------------------------------------------------------
+#accessing a map variable
+
+output "accessing_map_var" {
+  value = var.fruits_stock["apple"]
 }
