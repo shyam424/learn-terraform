@@ -55,3 +55,7 @@ output "fruits_second" {
 output "accessing_map_var" {
   value = var.fruits_stock["apple"]
 }
+
+output "accessing_map_of_map_var" {
+  value = var.fruit_stock_with_price["apple"].stock
+}
