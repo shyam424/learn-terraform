@@ -40,7 +40,7 @@ variable "fruit_stock_with_price" {
   }
 }
 #--------------------------------------------------------------------------------
-##accessing list variable
+##accessing list variable, list index starts from zero
 output "fruits_first" {
   value = var.fruits[0]
 }
@@ -49,7 +49,7 @@ output "fruits_second" {
   value = var.fruits[1]
 }
 
-#-----------------------------------------------------------------------------
+
 #accessing a map variable
 
 output "accessing_map_var" {
@@ -58,4 +58,22 @@ output "accessing_map_var" {
 
 output "accessing_map_of_map_var" {
   value = var.fruit_stock_with_price["apple"].price
+}
+
+#-----------------------------------------------------------------------------
+# variable data types
+
+variable "fruit_data_types" {
+  default = {
+    apple = {
+      stock = 100  # number
+      type  = "godavari" # string
+      for_sale = true # boolean
+    }
+  }
+}
+
+# accessing data types , variable in a combination of any other string then it needs to be in ${}
+output "acceesing_different_data_types" {
+  value = "apple stock = ${var.fruit_data_types["apple"].stock}, apple type = ${var.fruit_data_types["apple"].type},apple sale status = ${var.fruit_data_types["apple"].for_sale}"
 }
