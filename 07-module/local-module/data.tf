@@ -8,5 +8,5 @@ data aws_ami_ids "ami" {
 }
 
 output "ami" {
-  value = data.aws_ami_ids
+  value = data.aws_ami_ids.ami
 }
