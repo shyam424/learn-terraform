@@ -16,3 +16,22 @@ resource "aws_route53_record" "record" {
   ttl     = 30
   records =[ aws_instance.instances.private_ip ]
 }
+
+
+//once the machines are created , we will call the ansible scripts which will help to install the respected packages in their machines
+
+resource "null_resource" "ansible" {
+
+  depends_on = [ aws_route53_record.record]
+
+  provisioner "local-exec" {
+    command = <<EOF
+cd /home/centos/roboshop-ansible
+git pull
+sleep 30
+ansible-playbook -i ${var.name}.devopspractice23.online, main.yml -e ansible_user=centos -e ansible_password=DevOps321 -e
+component = ${var.name}
+EOF
+
+  }
+}
