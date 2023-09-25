@@ -15,7 +15,7 @@ variable "components" {
 resource "aws_security_group" "allow_tis" {
  ## count = length(var.components)-->dont use count
   for_each = var.components
-  name = lookup (var.components, each.key, null)
+  name = lookup (var.components, each.key, "null")
   #each.Key is used if we want the direct value of catalogue
   #if there is no value then output is null
 }
