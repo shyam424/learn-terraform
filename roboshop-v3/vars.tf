@@ -19,8 +19,8 @@ variable "components" {
       name = "frontend"
       instance_type = "t3.micro"
     }
-    carts = {
-      name = "carts"
+    cart = {
+      name = "cart"
       instance_type = "t3.micro"
     }
     catalogue = {
