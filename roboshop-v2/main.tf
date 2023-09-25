@@ -45,6 +45,7 @@ resource "aws_instance" "instances" {
   }
 }
 
+#instances creating in the above will generate as a map
 
 resource "aws_route53_record" "frontend" {
   for_each = var.components
@@ -53,9 +54,12 @@ resource "aws_route53_record" "frontend" {
   type    = "A"
   ttl     = 30
   records =[ lookup (lookup(aws_instance.instances,each.key,null),"private_ip", null)]
+  #data will be coming in the map from the above aws_instance.instances component and you use lookup for that map
 }
 
 
 output "instance_details" {
   value = aws_instance.instances
 }
+
+#output will provide how the machines are create for with full etails
