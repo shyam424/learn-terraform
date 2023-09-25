@@ -4,13 +4,14 @@ provider "aws" {
 
 variable "components" {
   default = {
-    catalogue ={ name= "catalogue_sg"}
-    mongodb   ={ name= "mongodb_sg"}
+    catalogue ={ name = "catalogue_sg"}
+    mongodb   ={ name = "mongodb_sg"}
     #catalogue= Key
     #inside the flower brackets is VALUE(name="___")
   }
 }
 
+#we are creating two security groups
 resource "aws_security_group" "allow_tis" {
  ## count = length(var.components)-->dont use count
   for_each = var.components
