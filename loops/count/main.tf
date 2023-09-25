@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
 variable "components"{
   default = ["frontend","mongodb"]
 }
@@ -5,6 +9,8 @@ variable "components"{
 resource "aws_instance" "rabbitmq" {
 
   count = length(var.components)
+  #//Count= will let you know how many time sit should run in loops
+  #Count is a keyword
 
   ami           = "ami-03265a0778a880afb"
   instance_type = "t3.small"
