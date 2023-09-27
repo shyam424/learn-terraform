@@ -22,7 +22,7 @@ resource "aws_route53_record" "record" {
 
 resource "null_resource" "ansible" {
 
-  depends_on = [ aws_route53_record.record]
+  depends_on = [ aws_route53_record.record]  #this is a dependency condition ,route 53 should be completed to proceed with the next steps
 
   provisioner "local-exec" {
     command = <<EOF
