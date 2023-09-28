@@ -62,4 +62,4 @@ output "instance_details" {
   value = aws_instance.instances
 }
 
-#output will provide how the machines are create for with full etails
+#output will provide how the machines are create for with full details
