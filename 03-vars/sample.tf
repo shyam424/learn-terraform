@@ -74,6 +74,6 @@ variable "fruit_data_types" {
 }
 
 # accessing data types , variable in a combination of any other string then it needs to be in ${}
-output "acceesing_different_data_types" {
+output "accesing_different_data_types" {
   value = "apple stock = ${var.fruit_data_types["apple"].stock}, apple type = ${var.fruit_data_types["apple"].type},apple sale status = ${var.fruit_data_types["apple"].for_sale}"
 }
