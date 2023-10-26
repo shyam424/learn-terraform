@@ -23,5 +23,5 @@ variable "vpc" {
 }
 
 output "all_subnets" {
-  value = var.vpc["cidr"]["main"]["subnets"]
+  value = var.vpc["main"]["cidr"]["subnets"]
 }
