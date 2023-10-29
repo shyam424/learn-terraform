@@ -18,4 +18,10 @@ resource "aws_security_group" "allow_tis" {
   name = lookup(each.value,"name", null)
   #each.Key is used if we want the direct value of catalogue
   #if there is no value then output is null
+
+  output "test" {
+    for_each = var.components
+    value = lookup(each.value,"name",null)
+  }
+
 }
