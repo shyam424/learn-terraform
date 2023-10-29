@@ -10,4 +10,5 @@ output "test_functions" {
   #TRY function will return 0 if the value is not DECLARED
   #there are lot of functions in the terraform, learn them
   value = element(var.fruits,5)
+  #output=banana
 }
